@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Attendance Management</title>
+    <link rel="stylesheet" href="css/login-style.css">
+</head>
+<body>
+        {{!-- {{#if first}}
+            <div class="mess">{{first}}</div>
+        {{/if}}
+        <form action="/login" method="POST">
+        <input type="text" name="email" id="email" required placeholder="Enter Email">
+        <input type="password" name="password" id="password" required placeholder="Enter password">
+        <input type="submit" value="Log In">
+        {{#if message}}
+            <div class="mess">{{message}}</div>
+        {{/if}}
+    </form> --}}
+    <div class="main-box">
+        <div class="div-1">
+            <div class="box-1">
+                <img src="img/logo1.png" alt="" width="120px" height="120px" style="margin-left: 170px;">
+                <h2>Online Attendance Management <br>System</h2>
+            </div>
+        </div>
+        <div class="div-2">
+            <div class="box-2">
+                <div class="reg-form">
+                    <form  action="/login" method="POST">
+                        <label for="">Enter your email</label><br>
+                        <input type="email" name="email" placeholder="Email"><br>
+                        <label for="">Enter your Password</label><br>
+                        <input type="password" name="password" placeholder="Password"><br>
+                        <button id="login">Login</button>
+                        {{#if message}}
+                            <div style="color: white;">{{message}}</div>
+                        {{/if}}
+                        <p>Don't have an account?</p>
+                        <button id="signup">Create Your Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

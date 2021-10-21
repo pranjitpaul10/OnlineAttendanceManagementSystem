@@ -1,0 +1,142 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+
+
+.main-box{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.div-2{
+    width: 65%;
+    height: 100vh;
+    background-color: #0d6584;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.box-2{
+    width: 85%;
+    /* width: 800px; */
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 3px #282C35;
+    /* margin-top: 120px; */
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+.box-1{
+   margin-top: -70px ;
+}
+.box-1 h2{
+    color: #0d6584;
+    /* #0d6null584 */
+    text-align: center;
+    margin-left: 50px;
+}
+.div-1{
+    width: 90%;
+    /* width: 800px; */
+    position: absolute;
+    height: 400px;
+    /* margin-top: 120px; */
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    margin-left: 60px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 3px #282C35;
+    display: flex;
+    align-items: center;
+}
+.reg-form{
+    width: 40%;
+    margin-left: 45%;
+    padding-top: 60px;
+    padding-left: 30px;
+    font-family: monospace;
+    font-size: 16px;
+}
+form{
+    color: white;
+}
+input{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+label{
+    margin-top: 10px;
+}
+#login{
+    border: none;
+    outline: none;
+    line-height: 30px;
+    /* width: 0px; */
+    padding: 4px 20px;
+    margin-top: 5px;
+    margin-left: 64px;
+    font-size: 20px;
+    border-radius: 50px;
+    /* background-color: rgb(54, 255, 47); */
+    /* background: #0d6584; */
+    background: #11101d;
+    color: white;
+}
+.reg-form form p{
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    /* text-align: center; */
+}
+#signup{
+    border: none;
+    outline: none;
+    width: 200px;
+    text-align: center;
+    /* margin-top: 3px; */
+    padding: 5px;
+    background-color: #11101d;
+    color: white;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 50px;
+}
+.reg-form-2{   
+    width: 40%;
+    margin-left: 45%;
+    padding-top: 40px;
+    padding-left: 30px;
+    /* font-family: monospace; */
+    font-size: 16px;
+}
+.reg-form-2 p{
+    color: white;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+.reg-form-2 a{
+    color: white;
+    margin-left: 75px;
+}
+#signupbtn{
+    padding: 3px;
+    margin-left: 70px;
+}
+button{
+    cursor: pointer;
+}
+a{
+    cursor: pointer;
+}

@@ -1,0 +1,23 @@
+{{>header}}
+<div class="main_content">
+    <div class="home_content">
+        <h1 class="headline"><span> Take Attendance</span> <span class="dot">Hi, {{firstname}}</span></h1>
+        <section class="content_div">
+            <div class="location">Home > Take Attendance</div>
+            <div class="container">
+
+                <h2 class="inner_head">Select Class To Take Attendance</h2>
+                <div class="row">
+                    {{#each classname as |item i|}}
+                    <div class="class_card">
+                        <h2 class="key">{{this}}</h2>
+                        <p class="value">Total Students = 20 <br><a class="btn btn-light" style="font-size: 1.3rem;"
+                                href="/take-attendance/class?id={{i}}">Take Attendance</a></p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{{>footer}}

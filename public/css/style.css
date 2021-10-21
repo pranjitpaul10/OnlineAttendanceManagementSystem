@@ -1,0 +1,694 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  /* overflow: hidden; */
+}
+::selection{
+  color: #fff;
+  background: #11101d;
+}
+
+/* <<<<-------------------------- sidebar designing starts----------------------------->>>>> */
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 7.8rem;
+  background: #11101d;
+  padding: 0.6rem 1.4rem;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidebar.active{
+  width: 30rem;
+}
+.sidebar .logo_content .logo{
+  color: #fff;
+  display: flex;
+  height: 5rem;
+  /* background: rgb(27, 27, 92); */
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sidebar.active .logo_content .logo{
+  opacity: 1;
+  pointer-events: none;
+}
+.logo_content .logo i{
+  font-size: 2.8rem;
+  margin-right: 5rem;
+}
+.logo_content .logo .logo_name{
+  font-size: 2rem;
+  font-weight: 400;
+}
+.sidebar #btn{
+  position: absolute;
+  color: #fff;
+  top: 0.6rem;
+  left: 50%;
+  font-size: 2.2rem;
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+  line-height: 5rem;  
+  transform: translateX(-50%);
+}
+.sidebar.active #btn{
+  left: 90%;
+}
+.sidebar ul{
+  margin-top: 2rem;
+}
+.sidebar ul li{
+  position: relative;
+  height: 5rem;
+  width: 100%;
+  margin: 0 0.5rem;
+  list-style: none;
+  line-height: 5rem;
+  margin: 0.5rem 0;
+}
+.sidebar ul li .tooltip, .sidebar .profile .tooltip{
+  position: absolute;
+  pointer-events: none;
+  /* height: 3.5rem; */
+  font-size: 1.6rem;
+  /* width: 12.2rem; */
+  padding: 1rem;
+  line-height: 3rem;
+  top: 0;
+  left: 100%;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2px);
+  text-align: center;
+  opacity: 0;
+}
+.sidebar .profile .tooltip{
+  color: #fff;
+  background: rgb(182, 27, 27);
+  width: 10rem;
+  font-weight: 700;
+}
+
+.sidebar ul li:hover .tooltip, .sidebar .profile:hover .tooltip{
+top: 50%;
+transition: all 0.5s ease;
+opacity: 1;
+
+}
+.sidebar.active ul li .tooltip, .sidebar.active .profile .tooltip{
+  display: none;
+}
+
+.sidebar ul li a{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 1.2rem;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+}
+.sidebar ul li a:hover{
+  color: #11101d;
+  background: #fff;
+}
+.sidebar ul li i{
+  font-size: 1.8rem;
+  font-weight: 400;
+  height: 5rem;
+  min-width: 5rem;
+  border-radius: 1.2rem;
+  line-height: 5rem;
+  text-align: center;
+}
+.sidebar .links_name{
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.sidebar.active .links_name{
+  transition: 0s;
+  opacity: 1;
+  pointer-events: auto
+}
+.sidebar .profile_content{
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.sidebar .profile_content .profile{
+  position: relative;
+  padding: 1rem 0.6rem;
+  height: 7rem;
+  background: none;
+  transition: all 0.4s ease;
+}
+.sidebar.active .profile_content .profile{
+  background: #1d1b31;
+}
+.profile #log_out{
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.4s ease;
+  /* background: #1d1b31; */
+  cursor: pointer;
+  background: rgb(182, 27, 27);
+}
+.sidebar.active .profile #log_out{
+  left: 88%;
+  background: rgb(182, 27, 27);
+}
+.main_content{
+  background: #E4E9F7; 
+  margin-left: 7.8rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2px);
+  transition: all 0.5s ease;
+  min-height: 100vh;
+}
+.sidebar.active ~ .main_content{
+  z-index: 100;
+  margin-left: 30rem;
+}
+
+/* <<<<-------------------------- sidebar designing ends ----------------------------->>>>> */
+
+/* <<<<-------------------------- common designing starts----------------------------->>>>> */
+
+.home_content{
+  /* padding: 2rem; */
+}
+.container{
+  width: 80%;
+  margin: 0 auto;
+  /* border: 2px solid red; */
+  padding: 2rem 0;
+}
+.location{
+  font-size: 2rem;
+}
+.location span{
+  text-transform: capitalize;
+}
+.headline{
+  background: #11101d;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.dot{
+  font-size: 2.3rem;
+}
+.dot::after{
+  content: "";
+  display: inline-block;
+  /* border: 2px solid green; */
+  height: 9px;
+  width: 9px;
+  background: rgb(20, 172, 20);
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  border-radius: 100%;
+}
+.content_div{
+  padding: 2rem;
+  /* border: 2px solid blue; */
+}
+.inner_head{
+  /* color: #F33A00; */
+  font-size: 3rem;
+  text-transform: capitalize;
+  /* background: white; */
+  line-height: 6rem;
+  padding: 0 2rem;
+  border-radius: 8px;
+  /* border: 2px solid #F33A00; */
+  /* text-align: center; */
+  color: white;
+  background: #11101d;
+  /* display: inline-block; */
+  box-shadow: 0px 0px 8px 1px rgb(44, 36, 36);
+}
+
+
+/* <<<<<<<-------------Dashboard------------------->>>>>>> */
+
+.dashboard-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  /* border: 2px solid red; */
+  padding-top: 3rem;
+}
+
+.take_attendence , .view_attendence , .my_classes{
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 5px 2px #ff7129; */
+  box-shadow: 0px 0px 8px 1px rgb(44, 36, 36);
+  width: 35%;
+  background: lightblue;
+  margin-bottom: 7rem;
+  height: 20rem;
+  position: relative;
+  font-size: 1.2rem;
+  /* background-color: #2f2f2b; */
+  background-color: #11101d;
+  color: #E4E9F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+.take_attendence:hover , .view_attendence:hover , .my_classes:hover{
+  transform: scale(1.1);
+  background: #11101dde;
+}
+
+.take_attendance-part , .view_attendance-part , .my_classes-part{
+
+  height: 10rem;
+  width: 20%;
+  position: absolute;
+  /* background-color: #ff7129; */
+  background-color: #F33A00;
+  top: -2rem;
+  left: 1rem;
+  margin-left: 1rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 63%, 0 100%);
+}
+
+.take_attendence .bx{
+  transform: scale(4);
+  margin-top: 2rem;
+}
+
+.view_attendence .bx{
+  transform: scale(4);
+  margin-top: 2rem;
+}
+
+.my_classes .bx{
+  transform: scale(4);
+  margin-top: 2rem;
+}
+
+
+
+/* <<<<<----------My Classes designing------------->>>>> */
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 2px solid black; */
+}
+
+.class_card {
+  /* display: inline-block; */
+  width: 27%;
+  padding: 4rem 1rem 7rem 1rem;
+  background-color: #F33A00;
+  margin:3rem 3rem;
+  position: relative;
+  height: 24rem;
+}
+.class_card:after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  right: 0px;
+  border-bottom: 20px solid #af3e1c;
+  border-left: 20px solid #af3e1c;
+  border-right: 20px solid #E4E9F7;
+  border-top: 20px solid #E4E9F7;
+  position: absolute;
+  filter: drop-shadow(-5px 5px 3px rgba(0, 0, 0, 0.5));
+}
+.class_card:before {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-top: 30px solid #af3e1c;
+  border-right: 30px solid #af3e1c;
+  border-left: 30px solid #E4E9F7;
+  border-bottom: 30px solid #E4E9F7;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  filter: drop-shadow(8px -8px 5px rgba(0, 0, 0, 0.5));
+  margin-right: 10%;
+}
+
+.class_card h2 {
+  color: snow;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.class_card p {
+  color: snow;
+  font-size: 1.5rem;
+  line-height: 140%;
+}
+.plus_btn{
+  display: inline-block;
+  /* padding: 1rem; */
+  /* vertical-align: middle; */
+  font-size: 5rem;
+  line-height: 8rem;
+  text-align: center;
+  width: 8rem;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px 1px rgb(43, 36, 36);
+  background: #11101d;
+  color: white;
+  position: fixed;
+  right: 6rem;
+  bottom: 6rem;
+  cursor: pointer;
+  z-index: 10;
+}
+.add_class{
+  /* line-height: 10rem;
+  width: 10rem; */
+  /* display: none; */
+  pointer-events: none;
+  opacity: 0;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  background: #11101d;
+  position: fixed;
+  right: 10rem;
+  bottom: 8rem;
+  transition: all 0.5s ease;
+  /* text-align: center; */
+  box-shadow: 0px 0px 10px 1px rgb(44, 36, 36);
+  z-index: 12;
+}
+.add_class input[type="text"]{
+  width: 25rem;
+  line-height: 2rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  /* border: 3px solid #F33A00; */
+  padding: 1rem;
+  display: inline-block;
+  font-size: 1.8rem;
+}
+
+.add_class.active_add_class{
+  /* display: inline-block; */
+  opacity: 1;
+  bottom: 15rem;
+  pointer-events: all;
+  /* transition: 2s; */
+}
+
+/* <<<<<<<---------------------------------students designing--------------------------->>>>>>>> */
+
+
+.std_list{
+  width: 70%;
+  padding: 4.5rem 1rem;
+}
+.normal-head{
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.students_inner{
+  display: flex;
+}
+.students_inner .roll_no,.students_inner .name{
+  width: 50%;
+  background: white;
+  border-radius: 8px;
+}
+.table_head{
+  font-size: 2rem;
+  background: #F33A00;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.roll_no .table_head{
+  border-right: 2px solid white;
+}
+.name .table_head{
+  border-left: 2px solid white;
+}
+.table_body{
+  font-size: 1.5rem;
+  /* padding: 1rem; */
+}
+.table_body .values{
+  padding: 1rem;
+  border-bottom: 2px solid #aaa;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+.roll_no .values{
+  /* border-right: 2px solid white; */
+  border-right: 1px solid #aaa;
+}
+.name .values{
+  text-transform: capitalize;
+  /* border-left: 2px solid white; */
+  border-left: 1px solid #aaa;
+}
+.add_student{
+  pointer-events: none;
+  opacity: 1;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  background: #11101d;
+  position: fixed;
+  right: 10rem;
+  bottom: 8rem;
+  transition: all 0.5s ease;
+  /* text-align: center; */
+  box-shadow: 0px 0px 10px 1px rgb(44, 36, 36);
+  z-index: 12;
+}
+
+
+/* <<<<<<<<-----------------------------viewList---------------------------->>>>>>>>> */
+
+.view_inner_head{
+  font-size: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0px 0px 10px 1px #aaa;
+  display: flex;
+  justify-content: space-between;
+}
+.std_view_list{
+  /* width: 70%; */
+  padding: 4.5rem 1rem;
+}
+.view_list_page_students_inner{
+  display: flex;
+}
+.view_list_page_students_inner .roll_no,.view_list_page_students_inner .name, .view_list_page_students_inner .attendance, .view_list_page_students_inner .percentage, .view_list_page_students_inner .output{
+  background: white;
+  border-radius: 8px;
+}
+.view_list_page_students_inner .roll_no{
+  width: 23%;
+}
+.view_list_page_students_inner .attendance,.view_list_page_students_inner .output,.view_list_page_students_inner .percentage{
+  width: 14%;
+}
+.view_list_page_students_inner .name{
+  width: 35%;
+}
+.view_list_page_students_inner .attendance .table_head{
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+.view_list_page_students_inner .percentage .table_head{
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+.view_list_page_students_inner .name .table_head{
+  border-right: 2px solid white;
+}
+.view_list_page_students_inner .output .table_head{
+  border-left: 2px solid white;
+}
+
+.view_list_page_students_inner .name .values{
+  border-right: 1px solid #aaa;
+}
+.view_list_page_students_inner .attendance .values{
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+.view_list_page_students_inner .percentage .values{
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+.view_list_page_students_inner .output .values{
+  border-left: 1px solid #aaa;
+}
+.name .values{
+  text-transform: capitalize;
+  /* border-left: 2px solid white; */
+  border-left: 1px solid #aaa;
+}
+.pass{
+    color: green;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.fail{
+    color: red;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.download{
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background: #F33A00;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 10rem;
+  display: inline-block;
+}
+.download:active{
+  color: white;
+  text-decoration: none;
+}
+.download:focus{
+  color: white;
+}
+.download:hover{
+  color: white;
+  background: #a34529;
+  text-decoration: none;
+}
+
+/* <<<<<<<<<<<-------------take_attendance_inner--------------->>>>>>>>> */
+.std_take_list{
+  width: 80%;
+  padding: 4.5rem 1rem;
+}
+.students_take_inner{
+  display: flex;
+}
+.students_take_inner .roll_no{
+  width: 35%;
+  background: white;
+  border-radius: 8px;
+}
+.students_take_inner .name{
+  width: 40%;
+  background: white;
+  border-radius: 8px;
+}
+.students_take_inner .check_input{
+  width: 25%;
+  background: white;
+  border-radius: 8px;
+}
+.students_take_inner .name .table_head{
+  border-right: 2px solid white;
+}
+.students_take_inner .check_input .table_head{
+  border-left: 2px solid white;
+}
+.students_take_inner .name .values{
+  border-right: 1px solid #aaa;
+}
+.students_take_inner .check_input .values{
+  border-left: 1px solid #aaa;
+}
+
+input[type="checkbox"]{
+  position: relative;
+  width: 3.2rem;
+  height: 1.6rem;
+  /* line-height: 1.7rem; */
+  /* height: 70%; */
+  top: 0;
+  -webkit-appearance: none;
+  background-color: #fa3333;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  transition: .5s;
+  margin: 0;
+}
+input:checked[type="checkbox"]{
+  background-color: #04fd63;
+}
+input[type="checkbox"]::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  transition: .5s;
+  background-color: #fdfcfc;
+
+}
+input:checked[type="checkbox"]::after{
+  left: 1.6rem;
+  /* right: 0; */
+}
+.submit_attendance{
+  font-size: 2rem;
+  padding: 0rem 1rem;
+  border: none;
+  outline: none;
+  background: #F33A00;
+  color: white;
+  border-radius: 10rem;
+  margin-top: 2rem;
+}

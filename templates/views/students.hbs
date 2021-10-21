@@ -1,0 +1,51 @@
+{{>innerheader}}
+<div class="main_content">
+    <div class="home_content">
+        <h1 class="headline"><span> My Classes</span> <span class="dot">Hi, {{firstname}}</span></h1>
+        <section class="content_div">
+            <div class="location">Home > My Classes > <span>{{classname}}</span></div>
+            <div class="container">
+                <h2 class="inner_head">{{classname}}</h2>
+                <div class="std_list">
+                    <div class="normal-head"> Students List</div>
+                    <div class="students_inner">
+                        <div class="roll_no">
+                            <div class="table_head">
+                                ROLL NUMBER
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.rollno}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="table_head">
+                                NAME
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.name}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plus_btn" id="add_click">
+                    +
+                </div>
+                <div class="add_class">
+                    <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
+                    <input type="text" id="roll" name="roll" placeholder="Enter roll"><br><br>
+                    <button class="btn" style="font-size: 1.6rem; background: #F33A00; color:white; border-radius:8px;"
+                        id="submitButton">Submit</button>
+                </div>
+
+                <div class="mess"></div>
+                <script src="../js/jquery-3.6.0.min.js"></script>
+                <script src="../js/students.js"></script>
+            </div>
+        </section>
+    </div>
+</div>
+{{>footer}}

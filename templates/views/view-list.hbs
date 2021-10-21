@@ -1,0 +1,70 @@
+{{>innerheader}}
+<div class="main_content">
+    <div class="home_content">
+        <h1 class="headline"><span> View Attendance</span> <span class="dot">Hi, {{firstname}}</span></h1>
+        <section class="content_div">
+            <div class="location">Home > View Attendance > <span>{{classname}}</span></div>
+            <div class="container">
+                <h2 class="inner_head">{{classname}}</h2>
+                <div class="std_view_list">
+                    <div class="view_inner_head"><div class="left_view_stud">Total classes taken : {{totalclass}}</div><div class="right_view_stud">Pass Percentage : {{passPercent}}%</div></div>
+                    <div class="view_list_page_students_inner">
+                        <div class="roll_no">
+                            <div class="table_head">
+                                Roll Number
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.rollno}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="table_head">
+                                Name
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.name}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="attendance">
+                            <div class="table_head">
+                                Attendance
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.attendance}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="percentage">
+                            <div class="table_head">
+                                Percentage
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.percent}}%</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="output">
+                            <div class="table_head">
+                                Output
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values {{check this ../passPercent}}">{{check this ../passPercent}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+
+                    </div>
+            
+                </div>
+            <a class="download" href="/download/class?id={{classid}}">Download Sheet</a>
+        </section>
+    </div>
+</div>
+{{>footer}}

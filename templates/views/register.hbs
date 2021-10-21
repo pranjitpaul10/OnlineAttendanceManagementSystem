@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Attendance Management</title>
+    <link rel="stylesheet" href="css/signup-style.css">
+</head>
+<body>
+    {{!-- <div class="form-container">
+        <form id="form" action="/register" method="POST">
+            <input type="text" name="firstname" id="firstname" placeholder="Enter first Name"><br><br>
+            <input type="text" name="lastname" id="lastname" placeholder="Enter last Name"><br><br>
+            <input type="email" name="email" id="email" placeholder="Enter Email"><br><br>
+            <label for="male">Male</label>
+            <input type="radio" value="male" name="gender" id="male">
+            <label for="female">Female</label>
+            <input type="radio" value="female" name="gender" id="female"><br><br>
+            <input type="password" name="password" id="password" placeholder="Enter Password"><br><br>
+            <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password"><br><br>
+            <input id="sub" type="submit" value="Register">
+            {{#if message}}
+            <div class="mess">{{message}}</div>
+            {{/if}}
+        </form>
+        <div id="error"></div>
+    </div> --}}
+    <div class="main-box">
+        <div class="div-1">
+            <div class="box-1">
+                <img src="img/logo1.png" alt="" width="120px" height="120px" style="margin-left: 170px;">
+                <h2>Online Attendance Management <br>System</h2>
+            </div>
+        </div>
+        <div class="div-2">
+            <div class="box-2">
+                <div class="reg-form-2">
+                    <form id="form" action="/register" method="POST">
+                        <input type="text" autocomplete="off" name="firstname" id="firstname" placeholder="Enter first Name"><br>
+                        <input type="text" autocomplete="off" name="lastname" id="lastname" placeholder="Enter last Name"><br>
+                        <input type="email" autocomplete="off" name="email" id="email" placeholder="Enter Email"><br>
+                        <label for="">Gender : </label>
+                        <label for="male">Male</label>
+                        <input type="radio" value="male" name="gender" id="male">
+                        <label for="female">Female</label>
+                        <input type="radio" value="female" name="gender" id="female"><br>
+                        <input type="password" name="password" id="password" placeholder="Enter Password"><br>
+                        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password"><br><br>
+                        <button id="signup">Sign Up</button>
+                        <p>Already have an account?</p>
+                        <a href="">Sign in</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

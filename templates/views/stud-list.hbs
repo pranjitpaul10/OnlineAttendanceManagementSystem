@@ -1,0 +1,85 @@
+{{>innerheader}}
+<div class="main_content">
+    <div class="home_content">
+        <h1 class="headline"><span> Take Attendance</span> <span class="dot">Hi, {{firstname}}</span></h1>
+        <section class="content_div">
+            <div class="location">Home > Take Attendance > <span>{{classname}}</span></div>
+            <div class="container">
+                <h2 class="inner_head">{{classname}}</h2>
+                <div class="std_take_list">
+                <form action="/take-attendance" method="POST">
+                    <div class="students_take_inner">
+                        <div class="roll_no">
+                            <div class="table_head">
+                                ROLL NUMBER
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.rollno}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="name">
+                            <div class="table_head">
+                                NAME
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails}}
+                                <p class="values">{{this.name}}</p>
+                                {{/each}}
+                            </div>
+                        </div>
+                        <div class="check_input">
+                            <div class="table_head">
+                                MARK
+                            </div>
+                            <div class="table_body">
+                                {{#each studentdetails as |item i|}}
+                                <p class="values"><input type="checkbox" value="{{i}}" name="present"> <span>Absent</span></p>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    <input name="id" id="q" style="display:none;">
+                </form>
+                <button class="submit_attendance">Submit</button>
+                </div>
+            </div>
+            {{!-- <form action="/take-attendance" method="POST">
+                <ul>
+                    {{#each studentdetails as |item i|}}
+                    <li>Roll : {{this.rollno}} Name : {{this.name}} <input type="checkbox" value="{{i}}" name="present">
+                    </li>
+                    {{/each}}
+                </ul>
+                <input name="id" id="q" style="display:none;">
+            </form>
+            <button>enter</button> --}}
+            <script src="../js/jquery-3.6.0.min.js"></script>
+            <script>
+                $('button').click(function () {
+                    const params = new URLSearchParams(window.location.search);
+                    $('#q').val(params.get('id'));
+                    $('form').submit();
+                })
+                {{!-- function noLoad(e) {
+                    e.preventDefault();
+
+                } --}}
+                $('input:checkbox').change(function(){
+
+                    if($(this).is(':checked')){
+                        {{!-- $('.values span')[0].html('Absent'); --}}
+                        document.querySelectorAll(".values span")[$(this).val()].innerHTML = "Present";
+                    }
+                    else{
+                        document.querySelectorAll(".values span")[$(this).val()].innerHTML = "Absent";
+                        {{!-- $('.values span')[0].html('Present'); --}}
+                    }
+                })
+            </script>
+
+        </section>
+    </div>
+</div>
+{{>footer}}

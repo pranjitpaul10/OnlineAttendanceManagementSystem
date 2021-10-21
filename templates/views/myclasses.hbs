@@ -1,0 +1,35 @@
+{{>header}}
+  <div class="main_content">
+    <div class="home_content">
+    <h1 class="headline"><span> My Classes</span> <span class="dot">Hi, {{firstname}}</span></h1>
+    <section class="content_div"> 
+      <div class="location">Home > My Classes</div>
+      <div class="container">
+      <div class="row">
+        {{#each classname as |item i|}}
+        <div class="class_card">
+            <h2 class="key">{{this}}</h2>
+          <p class="value">Total Students = 20 <br><a class="btn btn-light" style="font-size: 1.3rem;" href="/myclasses/class?id={{i}}">Show Students list</a></p>
+          {{!-- <button type="button" class="btn btn-dark">Dark</button> --}}
+          </div>
+          {{/each}}
+      </div>
+
+    <div class="plus_btn" id="add_click">
+      +
+    </div>
+    <div class="add_class">
+    <form id="form" action="/addclass" method="POST">
+    {{!-- <form id="form"> --}}
+        <input autocomplete="off" type="text" placeholder="Class Name" name="classname" required><br><br>
+        <input id="submitButton" class="btn" style="font-size: 1.6rem; background: #F33A00; color:white; border-radius:8px;" type="submit" value="Add Class">
+    </form>
+    </div>
+    
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/myclasses.js"></script>
+    </div>
+    </section>
+    </div>
+    </div>
+{{>footer}}
